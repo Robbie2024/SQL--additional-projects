@@ -60,26 +60,26 @@ VALUES
 
 # Analysis: 
 
-/* # Count how many companies are in each Industry
+--  # Count how many companies are in each Industry
 
 Select Count(industry),industry
 From fortune_companies
 group by industry
-*/
 
-/* # Which company has the Highest Revenue 
+
+-- # Which company has the Highest Revenue 
 Select Max(revenue)as Revenue_in_Billions,company_name 
 From fortune_companies
-*/
 
-/* # Top 5 best-performing industries  
+
+-- # Top 5 best-performing industries  
 Select Max(revenue) as Revenue,industry as Industry 
 From fortune_companies
 Group by Industry 
 Order by revenue desc
 limit 5;
-*/
-/* # Which company has Benefits 
+
+-- # Which company has Benefits 
 Select company_name, industry, 
 Case
 	When healthcare_benefits = 1 then "Has Benefits"
@@ -88,13 +88,13 @@ Case
  End as Benefits
 From fortune_companies
 Order by healthcare_benefits desc;
-*/
 
-/* 
-# Which industries have an average revenue of at least $250 Billion, and what are their avg revenues?
+
+ 
+-- # Which industries have an average revenue of at least $250 Billion, and what are their avg revenues?
 SELECT industry, ROUND(AVG(revenue),1) as avg_revenue_billions
 FROM fortune_companies
 GROUP BY industry
 HAVING avg_revenue_billions>=250
 order by revenue desc
-*/
+
