@@ -1,3 +1,4 @@
+-- Early practice exercise, basic aggregate queries
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
